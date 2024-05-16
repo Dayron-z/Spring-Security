@@ -52,9 +52,7 @@ public class SecurityConfig {
                     /*Endpoints privados*/
                     http.requestMatchers(HttpMethod.GET, "/auth/hello-secured").hasAuthority("CREATE");
                     /*Endpoints restantes */
-
-
-
+                    http.anyRequest().denyAll();
                 })
                 .build();
     }
